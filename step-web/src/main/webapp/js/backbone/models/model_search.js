@@ -8,8 +8,8 @@ var SearchModel = Backbone.Model.extend({
             detail: 0,
             searchType: undefined,
             context: 0,
-            searchVersions : "ESV"
-
+            searchVersions : "ESV",
+            searchDisplayVersions : "ESV"
         }
     },
     /**
@@ -119,7 +119,8 @@ var SearchModel = Backbone.Model.extend({
             this.get("querySyntax"),
             this.getDefaultedValue("context"),
             this.getDefaultedValue("searchVersions"),
-            this.getDefaultedValue("sortOrder")
+            this.getDefaultedValue("sortOrder"),
+            this.getDefaultedValue("searchDisplayVersions")
         ];
 
         //now calculate the field values...
@@ -217,6 +218,8 @@ var SearchModel = Backbone.Model.extend({
                 return "NONE";
             case "pageSize":
                 return step.defaults.pageSize;
+            case "searchDisplayVersions":
+                return "ESV";
             default:
                 return;
         }

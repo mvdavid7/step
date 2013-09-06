@@ -449,7 +449,7 @@ step.util = {
         },
 
         getVisibleVersions: function (passageId) {
-            return $("fieldset:visible", step.util.getPassageContainer(passageId)).find(".searchVersions, .passageVersion, .extraVersions");
+            return $("fieldset:visible", step.util.getPassageContainer(passageId)).find(".searchDisplayVersions, .passageVersion, .extraVersions");
         },
 
         addStrongHandlers: function (passageId, passageContent) {

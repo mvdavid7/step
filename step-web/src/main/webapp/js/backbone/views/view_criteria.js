@@ -50,6 +50,8 @@ var SearchCriteria = Backbone.View.extend({
         this.pageNumber = this.$el.find(".pageNumber");
         this.searchVersions = this.$el.find(".searchVersions");
         this.searchVersions.versions({ multi: true });
+        this.searchDisplayVersions = this.$el.find(".searchDisplayVersions");
+        this.searchDisplayVersions.versions({ multi: false });
         this.freeTextFields = this.$el.find("._m").not(".drop");
 
         this.detailLevel = this.$el.detailSlider({
@@ -293,6 +295,11 @@ var SearchCriteria = Backbone.View.extend({
             $.each($(".searchVersions"), function (i, item) {
                 $(item).versions({
                     multi: true
+                });
+            });
+            $.each($(".searchDisplayVersions"), function (i, item) {
+                $(item).versions({
+                    multi: false
                 });
             });
         });
